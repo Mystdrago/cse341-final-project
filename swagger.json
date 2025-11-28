@@ -7,9 +7,7 @@
   },
   "host": "https://cse341-final-project-wdxo.onrender.com",
   "basePath": "/",
-  "schemes": [
-"https"
-  ],
+  "schemes": ["https"],
   "paths": {
     "/": {
       "get": {
@@ -394,24 +392,65 @@
     },
     "/equipment/": {
       "get": {
+        "tags": [
+          "equipments"
+        ],
         "description": "",
         "responses": {
-          "default": {
-            "description": ""
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       },
       "post": {
+        "tags": [
+          "equipment"
+        ],
         "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "example": "any"
+                },
+                "damage": {
+                  "example": "any"
+                },
+                "range": {
+                  "example": "any"
+                },
+                "hit": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
         "responses": {
-          "default": {
-            "description": ""
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       }
     },
     "/equipment/{id}": {
       "get": {
+        "tags": [
+          "equipments"
+        ],
         "description": "",
         "parameters": [
           {
@@ -422,12 +461,21 @@
           }
         ],
         "responses": {
-          "default": {
-            "description": ""
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       },
       "put": {
+        "tags": [
+          "equipment"
+        ],
         "description": "",
         "parameters": [
           {
@@ -435,15 +483,48 @@
             "in": "path",
             "required": true,
             "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "example": "any"
+                },
+                "damage": {
+                  "example": "any"
+                },
+                "range": {
+                  "example": "any"
+                },
+                "hit": {
+                  "example": "any"
+                }
+              }
+            }
           }
         ],
         "responses": {
-          "default": {
-            "description": ""
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       },
       "delete": {
+        "tags": [
+          "equipment"
+        ],
         "description": "",
         "parameters": [
           {
@@ -454,32 +535,76 @@
           }
         ],
         "responses": {
-          "default": {
-            "description": ""
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       }
     },
     "/users/": {
       "get": {
+        "tags": [
+          "users"
+        ],
         "description": "",
         "responses": {
-          "default": {
-            "description": ""
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       },
       "post": {
+        "tags": [
+          "users"
+        ],
         "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "userNameame": {
+                  "example": "any"
+                },
+                "password": {
+                  "example": "any"
+                },
+                "gm": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
         "responses": {
-          "default": {
-            "description": ""
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       }
     },
     "/users/{id}": {
       "get": {
+        "tags": [
+          "users"
+        ],
         "description": "",
         "parameters": [
           {
@@ -490,12 +615,21 @@
           }
         ],
         "responses": {
-          "default": {
-            "description": ""
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       },
       "put": {
+        "tags": [
+          "users"
+        ],
         "description": "",
         "parameters": [
           {
@@ -503,15 +637,45 @@
             "in": "path",
             "required": true,
             "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "userNameame": {
+                  "example": "any"
+                },
+                "password": {
+                  "example": "any"
+                },
+                "gm": {
+                  "example": "any"
+                }
+              }
+            }
           }
         ],
         "responses": {
-          "default": {
-            "description": ""
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       },
       "delete": {
+        "tags": [
+          "users"
+        ],
         "description": "",
         "parameters": [
           {
@@ -522,8 +686,14 @@
           }
         ],
         "responses": {
-          "default": {
-            "description": ""
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       }
