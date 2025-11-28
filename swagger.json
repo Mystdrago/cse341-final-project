@@ -5,7 +5,7 @@
     "description": "An RPG Api",
     "version": "1.0.0"
   },
-  "host": "https://cse341-final-project-wdxo.onrender.com",
+  "host": "cse341-final-project-wdxo.onrender.com",
   "basePath": "/",
   "schemes": ["https"],
   "paths": {
@@ -393,7 +393,7 @@
     "/equipment/": {
       "get": {
         "tags": [
-          "equipments"
+          "equipment"
         ],
         "description": "",
         "responses": {
@@ -449,7 +449,7 @@
     "/equipment/{id}": {
       "get": {
         "tags": [
-          "equipments"
+          "equipment"
         ],
         "description": "",
         "parameters": [

@@ -12,7 +12,7 @@ const validateEquipment = (equipment) => {
 };
 
 const getAll = async (req, res) => {
-    //#swagger.tags=['equipments']
+    //#swagger.tags=['equipment']
     try {
         const result = await mongodb.getDatabase().db().collection('equipment').find();
         const equipments = await result.toArray();
@@ -23,7 +23,7 @@ const getAll = async (req, res) => {
 };
 
 const getSingle = async (req, res) => {
-    //#swagger.tags=['equipments']
+    //#swagger.tags=['equipment']
     try {
         const equipmentId = new ObjectId(String(req.params.id));
         const equipment = await mongodb.getDatabase().db().collection('equipment').findOne({_id: equipmentId});
