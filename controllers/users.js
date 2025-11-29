@@ -46,7 +46,7 @@ const addUser = async (req, res) => {
             return res.status(400).json({ error: 'Invalid user data' });
         }
 
-        const response = await mongodb.getDatabase().db().collection('user').insertOne(user);
+        const response = await mongodb.getDatabase().db().collection('users').insertOne(user);
         res.status(201).json({ id: response.insertedId });
     } catch (err) {
         res.status(500).json({ error: err.message });
