@@ -2,7 +2,7 @@ const mongodb = require('../data/database');
 const ObjectId = require('mongodb').ObjectId;
 
 const validateUsers = (user) => {
-    const requiredFields = ['name', 'damage', 'range', 'hit'];
+    const requiredFields = ['userName', 'password', 'gm'];
     for (const field of requiredFields) {
         if (user[field] === undefined || user[field] === null) {
             return false;
