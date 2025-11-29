@@ -38,7 +38,7 @@ const addUser = async (req, res) => {
     //#swagger.tags=['users']
     try {
         const user = {
-            userName: req.body.userNameame,
+            userName: req.body.userName,
             passowrd: req.body.password,
             gm: req.body.gm
         };
@@ -58,7 +58,7 @@ const updateUser = async (req, res) => {
     try {
         const userId = new ObjectId(String(req.params.id));
         const user = {
-            userName: req.body.userNameame,
+            userName: req.body.userName,
             passowrd: req.body.password,
             gm: req.body.gm
         };
