@@ -23,6 +23,8 @@
     "express": "^5.1.0",
     "express-session": "^1.18.2",
     "mongodb": "^7.0.0",
+    "passport": "^0.7.0",
+    "passport-google-oauth20": "^2.0.0",
     "swagger": "^0.0.1",
     "swagger-autogen": "^2.23.7",
     "swagger-ui-express": "^5.0.1"
