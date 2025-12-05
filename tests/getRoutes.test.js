@@ -1,6 +1,8 @@
+require('dotenv').config({ path: '.env.test' });
 const request = require('supertest');
 const app = require('../server'); 
 const mongodb = require('../data/database');
+
 
 let client;
 
@@ -14,9 +16,10 @@ beforeAll(async () => {
 });
 
 afterAll(async () => {
-    if (client && client.close) {
-        await client.close();
-    }
+  const dbClient = mongodb.getDatabase(); // should be your MongoClient
+  if (dbClient && dbClient.close) {
+    await dbClient.close();
+  }
 });
 
 // Helper function for GET tests
