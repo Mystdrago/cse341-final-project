@@ -2,18 +2,23 @@ const express = require('express');
 const router = express.Router();
 
 const equipmentController = require('../controllers/equipment');
-const gmAuth = require('../middleware/gmAuth');
+const checkGM = require('../middleware/checkGM');
 
 router.get('/', equipmentController.getAll);
 
 router.get('/:id', equipmentController.getSingle);
 
-//#swagger.security = [{ "GMToken": [] }]
-router.post('/', gmAuth, equipmentController.addEquipment);
+//POST /equipment (protected)
+// //#swagger.security = [{ "OAuth2": ["write"] }]
+router.post('/', checkGM, equipmentController.addEquipment);
 
-//#swagger.security = [{ "GMToken": [] }]
-router.put('/:id', gmAuth, equipmentController.updateEquipment);
+//PUT /equipment (protected)
+// //#swagger.security = [{ "OAuth2": ["write"] }]
+router.put('/:id', checkGM, equipmentController.updateEquipment);
 
-router.delete('/:id',equipmentController.removeEquipment);
+//DELETE /equipment (protected)
+// //#swagger.security = [{ "OAuth2": ["write"] }]
+router.delete('/:id', checkGM, equipmentController.removeEquipment);
+
 
 module.exports = router;

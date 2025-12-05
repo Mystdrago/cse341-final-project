@@ -2,18 +2,22 @@ const express = require('express');
 const router = express.Router();
 
 const monsterController = require('../controllers/monsters');
-const gmAuth = require('../middleware/gmAuth');
+const checkGM = require('../middleware/checkGM');
 
 router.get('/', monsterController.getAll);
 
 router.get('/:id', monsterController.getSingle);
 
-//#swagger.security = [{ "GMToken": [] }]
-router.post('/', gmAuth, monsterController.addMonster);
+// POST /monsters (protected)
+//#swagger.security = [{ "OAuth2": ["write"] }]
+router.post('/', checkGM, monsterController.addMonster);
 
-//#swagger.security = [{ "GMToken": [] }]
-router.put('/:id', gmAuth, monsterController.updateMonster);
+// PUT /monsters (protected)
+//#swagger.security = [{ "OAuth2": ["write"] }]
+router.put('/:id', checkGM, monsterController.updateMonster);
 
-router.delete('/:id',monsterController.removeMonster);
+// DELETE /monsters (protected)
+//#swagger.security = [{ "OAuth2": ["write"] }]
+router.delete('/:id', checkGM, monsterController.removeMonster);
 
 module.exports = router;

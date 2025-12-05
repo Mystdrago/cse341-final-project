@@ -11,6 +11,6 @@ router.post('/', playerController.addPlayer);
 
 router.put('/:id', playerController.updatePlayer);
 
-router.delete('/:id',playerController.removePlayer);
+router.delete('/:id', playerController.removePlayer);
 
 module.exports = router;

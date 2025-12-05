@@ -7,8 +7,6 @@ router.get('/', (req, res) => {
     res.send('Hello World');
 });
 
-router.use('/login', require('./login'));
-
 router.use('/monsters', require('./monsters'));
 
 router.use('/players', require('./players'));
