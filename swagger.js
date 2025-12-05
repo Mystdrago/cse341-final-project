@@ -6,7 +6,15 @@ const doc = {
         description: 'An RPG Api'
     },
     host: 'localhost:3002',
-    schemes: ['http', 'https']
+    schemes: ['http', 'https'],
+    securityDefinitions: {
+        GMToken: {
+            type: 'apiKey',
+            in: 'header',
+            name: 'Authorization',
+            description: 'GM token obtained from /login'
+        }
+    }
 };
 
 const outputFile = './swagger.json';

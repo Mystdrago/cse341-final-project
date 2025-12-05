@@ -574,7 +574,7 @@
             "schema": {
               "type": "object",
               "properties": {
-                "userNameame": {
+                "userName": {
                   "example": "any"
                 },
                 "password": {
@@ -644,7 +644,7 @@
             "schema": {
               "type": "object",
               "properties": {
-                "userNameame": {
+                "userName": {
                   "example": "any"
                 },
                 "password": {

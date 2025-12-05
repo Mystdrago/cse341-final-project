@@ -2,14 +2,17 @@ const express = require('express');
 const router = express.Router();
 
 const equipmentController = require('../controllers/equipment');
+const gmAuth = require('../middleware/gmAuth');
 
 router.get('/', equipmentController.getAll);
 
 router.get('/:id', equipmentController.getSingle);
 
-router.post('/', equipmentController.addEquipment);
+//#swagger.security = [{ "GMToken": [] }]
+router.post('/', gmAuth, equipmentController.addEquipment);
 
-router.put('/:id', equipmentController.updateEquipment);
+//#swagger.security = [{ "GMToken": [] }]
+router.put('/:id', gmAuth, equipmentController.updateEquipment);
 
 router.delete('/:id',equipmentController.removeEquipment);
 

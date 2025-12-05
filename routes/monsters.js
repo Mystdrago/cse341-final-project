@@ -2,14 +2,17 @@ const express = require('express');
 const router = express.Router();
 
 const monsterController = require('../controllers/monsters');
+const gmAuth = require('../middleware/gmAuth');
 
 router.get('/', monsterController.getAll);
 
 router.get('/:id', monsterController.getSingle);
 
-router.post('/', monsterController.addMonster);
+//#swagger.security = [{ "GMToken": [] }]
+router.post('/', gmAuth, monsterController.addMonster);
 
-router.put('/:id', monsterController.updateMonster);
+//#swagger.security = [{ "GMToken": [] }]
+router.put('/:id', gmAuth, monsterController.updateMonster);
 
 router.delete('/:id',monsterController.removeMonster);
 

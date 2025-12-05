@@ -39,7 +39,7 @@ const addUser = async (req, res) => {
     try {
         const user = {
             userName: req.body.userName,
-            passowrd: req.body.password,
+            password: req.body.password,
             gm: req.body.gm
         };
         if (!validateUsers(user)) {
