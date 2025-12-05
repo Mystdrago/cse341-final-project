@@ -59,7 +59,7 @@ const updateUser = async (req, res) => {
         const userId = new ObjectId(String(req.params.id));
         const user = {
             userName: req.body.userName,
-            passowrd: req.body.password,
+            password: req.body.password,
             gm: req.body.gm
         };
         if (!validateUsers(user)) {
